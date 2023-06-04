@@ -54,7 +54,7 @@ void call(Map parameters = [:], String stepName, String metadataFile, List crede
             config += ["ansHookServiceKeyCredentialsId": ansHookServiceKeyCredentialsId]
 
             // prepare stashes
-            // first eliminate non existing stashes
+            // first eliminate empty stashes
             config.stashContent = utils.unstashAll(config.stashContent)
             // then make sure that commonPipelineEnvironment, config, ... is also available when step stashing is active
             if (config.stashContent?.size() > 0) {
